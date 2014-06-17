@@ -51,7 +51,27 @@ Example
 NSString *baseURL = [DBEnvironmentConfiguration valueForKey:@"base_url"]; // Done 
 ```
 
+Shorthand
+---------
+**DBEnvironmentConfiguration** allows shorthand to get environment variables and to set the environment 
 
+##### Set Environment
+Set the environment before importing `DBEnvironmentConfiguration`. 
+```objc
+#define BUILD_ENVIRONMENT Staging
+#import <DBEnvironmentConfiguration/DBEnvironmentConfiguration.h> 
+```
+
+##### Turn on environment variable shorthand
+```objc
+#define _DBEC_SHORTHAND_
+#import <DBEnvironmentConfiguration/DBEnvironmentConfiguration.h> 
+
+...
+
+NSString *baseURL = ENV(@"base_url"); 
+
+```
 
 License
 ---------------
