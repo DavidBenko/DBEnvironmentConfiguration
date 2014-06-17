@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = "0.1.0"
   s.summary          = "Easily switch between development environments/ configurations"
   s.description      = <<-DESC
-Easily switch between development environments/ configurations
+Super-simple environment configuration for iOS apps. Switch between environments by changing one word.
                        DESC
   s.homepage         = "https://github.com/DavidBenko/DBEnvironmentConfiguration"
   s.license          = 'MIT'
