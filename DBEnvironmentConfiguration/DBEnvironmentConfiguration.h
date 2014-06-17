@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef _DBEC_SHORTHAND_
+#define ENV(x) [DBEnvironmentConfiguration valueForKey:x]
+#endif
+
 @interface DBEnvironmentConfiguration : NSObject
 
 /**
