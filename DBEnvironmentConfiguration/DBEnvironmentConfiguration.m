@@ -36,11 +36,7 @@ static NSString * const kEnvironmentConfigurationDefaultResourceExt = @"json";
 }
 
 - (void)readyInstance{
-#ifdef BUILD_ENVIRONMENT
-    _currentEnvironment = (NSString *)CFSTR(BUILD_ENVIRONMENT);
-#else
     _currentEnvironment = kEnvironmentConfigurationDefaultEnvironment;
-#endif
     _resource = kEnvironmentConfigurationDefaultResource;
     _resourceExtension = kEnvironmentConfigurationDefaultResourceExt;
     _configuration = getConfigurationFromFile(_resource, _resourceExtension, kEnvironmentConfigurationDefaultEnvironment);

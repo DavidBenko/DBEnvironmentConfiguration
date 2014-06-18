@@ -11,7 +11,7 @@ Super-simple environment configuration for iOS apps. Switch between environments
 ##### Via CocoaPods
 - Add `pod 'DBEnvironmentConfiguration'` to your podfile
 - Run `pod install`
-- Import header (`#import <DBEnvironmentConfiguration/DBEnvironmentConfiguration>`)
+- Import header (`#import <DBEnvironmentConfiguration/DBEnvironmentConfiguration.h>`)
  
 ##### Manual Installation
 - Add `DBEnvironmentConfiguration` folder to your project
@@ -55,19 +55,13 @@ Shorthand
 ---------
 **DBEnvironmentConfiguration** allows shorthand to get environment variables and to set the environment 
 
-##### Set Environment
-Set the environment before importing `DBEnvironmentConfiguration`. 
-```objc
-#define BUILD_ENVIRONMENT Staging
-#import <DBEnvironmentConfiguration/DBEnvironmentConfiguration.h> 
-```
-
 ##### Turn on environment variable shorthand
 ```objc
 #define _DBEC_SHORTHAND_
 #import <DBEnvironmentConfiguration/DBEnvironmentConfiguration.h> 
 
 ...
+SET_BUILD_ENVIRONMENT(@"Staging");
 
 NSString *baseURL = ENV(@"base_url"); 
 

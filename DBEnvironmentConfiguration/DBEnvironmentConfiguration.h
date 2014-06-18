@@ -10,6 +10,7 @@
 
 #ifdef _DBEC_SHORTHAND_
 #define ENV(x) [DBEnvironmentConfiguration valueForKey:x]
+#define SET_BUILD_ENVIRONMENT(x) [DBEnvironmentConfiguration setEnvironment:x]
 #endif
 
 @interface DBEnvironmentConfiguration : NSObject
