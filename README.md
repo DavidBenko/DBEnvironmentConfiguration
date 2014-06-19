@@ -4,7 +4,7 @@ DBEnvironmentConfiguration
 Overview
 ---------
 
-Super-simple environment configuration for iOS apps. Switch between environments by changing one word.
+Super-simple environment configuration for iOS apps. Set environment variables that switch automagically based on build type or set an environment with one line of code.
 
 ### Installation
 
