@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "DBEnvironmentConfiguration"
-  s.version          = "0.1.3"
+  s.version          = "0.2.0"
   s.summary          = "Easily switch between development environments/ configurations"
   s.description      = <<-DESC
 Super-simple environment configuration for iOS apps. Switch between environments by changing one word.
