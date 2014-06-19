@@ -53,7 +53,7 @@ NSString *baseURL = [DBEnvironmentConfiguration valueForKey:@"base_url"]; // Don
 
 Environment Detection
 ---------
-**DBEnvironmentConfiguration** can detect the build type of the application. You can map these build types to environments so that the environments will sitch automatcially. 
+**DBEnvironmentConfiguration** can detect the build type of the application. You can map these build types to environments so that the environments will switch automatcially. 
 
 Possible build types:
 ```objc
@@ -84,7 +84,7 @@ Setting the environment manually by calling `setEnvironment:` will turn off envi
 
 Shorthand
 ---------
-**DBEnvironmentConfiguration** allows shorthand to get environment variables and to set the environment 
+**DBEnvironmentConfiguration** allows shorthand to get environment variables and to set the environment. To turn on the shorthand, define `_DBEC_SHORTHAND_` before importing the header.  
 
 ##### Turn on environment variable shorthand
 ```objc
