@@ -51,19 +51,51 @@ Example
 NSString *baseURL = [DBEnvironmentConfiguration valueForKey:@"base_url"]; // Done 
 ```
 
+Environment Detection
+---------
+**DBEnvironmentConfiguration** can detect the build type of the application. You can map these build types to environments so that the environments will sitch automatcially. 
+
+Possible build types:
+```objc
+    DBBuildTypeUndetermined,
+    DBBuildTypeSimulator,
+    DBBuildTypeDebug,
+    DBBuildTypeAdHoc,
+    DBBuildTypeAppStore,
+	DBBuildTypeEnterprise
+```
+
+You can map build types individually or as one `NSDictionary *`.
+```objc
+    // Individual mapping
+    [DBEnvironmentConfiguration setEnvironment:@"Development" forBuildType:DBBuildTypeSimulator];
+    
+    // Map all environments at once
+    [DBEnvironmentConfiguration setEnvironmentMapping:@{
+                                                        [NSNumber numberWithInt:DBBuildTypeSimulator]     : @"Development",
+                                                        [NSNumber numberWithInt:DBBuildTypeDebug]         : @"Development",
+                                                        [NSNumber numberWithInt:DBBuildTypeAdHoc]         : @"Staging",
+                                                        [NSNumber numberWithInt:DBBuildTypeAppStore]      : @"Production",
+                                                        [NSNumber numberWithInt:DBBuildTypeEnterprise]    : @"Production"
+                                                        }];
+```
+
+Setting the environment manually by calling `setEnvironment:` will turn off environment detection. You can also enable/disable environment detection by calling `setEnvironmentDetection:`. 
+
 Shorthand
 ---------
 **DBEnvironmentConfiguration** allows shorthand to get environment variables and to set the environment 
 
 ##### Turn on environment variable shorthand
 ```objc
-#define _DBEC_SHORTHAND_
-#import <DBEnvironmentConfiguration/DBEnvironmentConfiguration.h> 
+    #define _DBEC_SHORTHAND_                    // Set before importing header
+    #import <DBEnvironmentConfiguration/DBEnvironmentConfiguration.h> 
 
 ...
-SET_BUILD_ENVIRONMENT(@"Staging");
 
-NSString *baseURL = ENV(@"base_url"); 
+    SET_BUILD_ENVIRONMENT(@"Staging");          // Set the environment
+    SET_ENVIRONMENT_MAPPING(@{@2:@"Staging"});  // Map environments
+    NSString *baseURL = ENV(@"base_url");       // Get environment variables 
 
 ```
 
